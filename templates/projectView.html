@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="card m-3">
+        <div class="card-body">
+            <h2 class="card-title">
+                <h1>{{object.title}}</h1>
+            </h2>
+            <p class="card-text">
+                <p>{{object.content}}</p>
+            </p>
+            <p class="card-text">
+                <p>{{object.author}}</p>
+            </p>
+            <a class="btn btn-primary" href="{% url 'project_list'%}">Go Back</a>
+    </div>
+</div>
+{% endblock content %}
