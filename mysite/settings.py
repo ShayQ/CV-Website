@@ -16,20 +16,22 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-
+SECRETS_DIR = os.path.join(Path(__file__).resolve().parent.parent, 'etc\secret_key.txt')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-tv25bq8qv^aww6st*0q0ls8jzn7r5)l5vq(w^5^_e&(c9z73rx'
-# with open('/etc/secret_key.txt') as f:
-#     SECRET_KEY = f.read().strip()
+with open(SECRETS_DIR) as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1'
+    ]
 
 
 # Application definition
